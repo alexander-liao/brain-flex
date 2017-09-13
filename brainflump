@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+from brainflex import flex
+import random
+
+class Dump:
+	def __init__(self, dump = None):
+		self.dump = dump or []
+	def pop(self):
+		return self.dump.pop()
+	def peek(self):
+		return self.dump[-1]
+	def push(self, value):
+		self.dump.append(value); random.shuffle(self.dump)
+	def size(self):
+		return len(self.dump)
+	def __str__(self):
+		return str(self.dump)
+	def __repr__(self):
+		return str(self)
+	def output(self):
+		print('\n'.join(map(str, self.dump)))
+
+if __name__ == '__main__':
+	flex('BrainFlump', 'Mayube', 'brainflump', Dump(), Dump())

@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+from brainflex import flex
+# -
+
+class Stack:
+	def __init__(self, stack = None):
+		self.stack = stack or []
+	def pop(self):
+		return self.stack.pop()
+	def peek(self):
+		return self.stack[-1]
+	def push(self, value):
+		self.stack.append(value)
+	def size(self):
+		return len(self.stack)
+	def __str__(self):
+		return str(self.stack)
+	def __repr__(self):
+		return str(self)
+	def output(self):
+		print('\n'.join(map(str, self.stack)))
+
+if __name__ == '__main__':
+	flex('BrainFlak', 'DJMcMayhem', 'brainflak', Stack(), Stack())
